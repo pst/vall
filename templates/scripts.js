@@ -55,20 +55,36 @@ $(document).ready(function() {
     // show the remote video
     rtc.attachStream(stream, 'remoteVideo');
   });*/
+ 
 
   var webrtc = new WebRTC({
+    // Signaling server
     // the id/element dom element that will hold "our" video
     localVideoEl: 'localVideo',
     // the id/element dom element that will hold remote videos
     remoteVideosEl: 'remotesVideos',
     // immediately ask for camera access
-    autoRequestMedia: true
+    autoRequestMedia: true,
+    media: {
+      audio: false,
+      video: {
+          mandatory: {},
+          optional: []
+      }
+    }
   });
+
+  try {
+    webrtc.joinRoom('angelhack');
+  } catch(e) {
+    console.log(e);
+  }
 
   // we have to wait until it's ready
   webrtc.on('readyToCall', function () {
       console.log("Call is ready");
       // you can name it anything
       webrtc.joinRoom('angelhack');
-  }); 
-}); 
+  });
+
+});

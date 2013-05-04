@@ -51,7 +51,7 @@ class EchoSocketHandler(cyclone.websocket.WebSocketHandler):
 
 
 def main():
-    reactor.listenTCP(os.environ.get("PORT", 5555), Application())
+    reactor.listenTCP(int(os.environ.get("PORT", 5555)), Application())
     reactor.run()
 
 

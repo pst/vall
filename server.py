@@ -22,6 +22,7 @@ class Application(cyclone.web.Application):
         handlers = [
             (r"/", IndexHandler),
             (r"/echo", EchoSocketHandler),
+            (r"/js/scripts.js", JSHandler),
             (r"/static/(.*)", cyclone.web.StaticFileHandler,
                 dict(path=settings['static_path'])),
         ]
@@ -30,12 +31,17 @@ class Application(cyclone.web.Application):
 
 class IndexHandler(cyclone.web.RequestHandler):
     def get(self):
+        self.render("index.html")
+
+
+class JSHandler(cyclone.web.RequestHandler):
+    def get(self):
         endpoint = "localhost:{0}".format(5555)
         if os.environ.get("DEP_NAME", False):
             dep_name = os.environ.get("DEP_NAME")
             endpoint = "{0}.cloudcontrolapp.com".format(dep_name.split('/')[0])
-        self.render("index.html", **{"wsendpoint": endpoint})
-
+        self.render("scripts.js", **{"wsendpoint": endpoint})
+        
 
 class EchoSocketHandler(cyclone.websocket.WebSocketHandler):
 

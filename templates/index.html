@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<title>Videowall</title>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 		<script type="text/javascript" src="/static/webrtc.io.js"></script>
 		<script type="text/javascript" src="/static/scripts.js"></script>
 		<link rel="stylesheet" type="text/css" media="screen" href="/static/style.css" />
 	</head>
 	<body>
 		<canvas id="ownCanvas"></canvas>
-		<video autoplay="autoplay" muted="true" preload="false" controls="false" id="ownVideo" style="display:none;"></video>
-		<video id="remoteVideo" autoplay="autoplay"></video>
+		<video autoplay="autoplay" id="ownVideo" style="display:none;"></video>
+		<canvas id="remoteCanvas"></canvas>
+		<video id="remoteVideo" autoplay="autoplay" style="display:none;"></video>
 	</body>
 </html>

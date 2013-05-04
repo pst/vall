@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var onFailSoHard = function(e) {
+/*  var onFailSoHard = function(e) {
     alert("You have to allow access to your webcam!");
   };  // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
 
@@ -40,9 +40,9 @@ $(document).ready(function() {
       } 
       c.drawImage(v,0,0,w,h);
       setTimeout(draw,100,v,c,w,h);
-  }
+  }*/
 
-  // note: make sure hostname available to all connecting clients
+/*  // note: make sure hostname available to all connecting clients
   // (ie. probably not `localhost`)
   rtc.connect('ws://{{ wsendpoint }}/echo');
 
@@ -54,5 +54,20 @@ $(document).ready(function() {
   rtc.on('add remote stream', function(stream){
     // show the remote video
     rtc.attachStream(stream, 'remoteVideo');
+  });*/
+
+  var webrtc = new WebRTC({
+    // the id/element dom element that will hold "our" video
+    localVideoEl: 'localVideo',
+    // the id/element dom element that will hold remote videos
+    remoteVideosEl: 'remotesVideos',
+    // immediately ask for camera access
+    autoRequestMedia: true
   });
+
+  // we have to wait until it's ready
+  webrtc.on('readyToCall', function () {
+      // you can name it anything
+      webrtc.joinRoom('your awesome room name');
+  }); 
 }); 

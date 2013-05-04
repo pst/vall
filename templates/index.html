@@ -3,7 +3,7 @@
 	<head>
 		<title>Videowall</title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-		<script type="text/javascript" src="/static/webrtc.io.js"></script>
+		<script src="http://simplewebrtc.com/latest.js"></script>
 		<script type="text/javascript" src="/js/scripts.js"></script>
 		<link rel="stylesheet" type="text/css" media="screen" href="/static/style.css" />
 	</head>
@@ -12,5 +12,9 @@
 		<video autoplay="autoplay" id="ownVideo" style="display:none;"></video>
 		<canvas id="remoteCanvas"></canvas>
 		<video id="remoteVideo" autoplay="autoplay" style="display:none;"></video>
+
+		<div id="localVideo"></div>
+		<div id="remotesVideos"></div>
+
 	</body>
 </html>

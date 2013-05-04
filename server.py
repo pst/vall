@@ -25,7 +25,6 @@ class Application(cyclone.web.Application):
             (r"/static/(.*)", cyclone.web.StaticFileHandler,
                 dict(path=settings['static_path'])),
         ]
-        RedisMixin.setup(os.environ.get(OPENREDIS_URL, "redis://localhost:6379"), 0, 10)
         cyclone.web.Application.__init__(self, handlers, **settings)
 
 

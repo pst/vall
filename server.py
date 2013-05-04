@@ -20,13 +20,18 @@ class Application(cyclone.web.Application):
         )
 
         handlers = [
-            (r"/", MainHandler),
+            (r"/", IndexHandler),
+            (r"/eserver", MainHandler),
             (r"/echo", EchoSocketHandler),
-            (r"/(jquery-latest\.js)", cyclone.web.StaticFileHandler,
+            (r"/static/(.*)", cyclone.web.StaticFileHandler,
                 dict(path=settings['static_path'])),
         ]
         cyclone.web.Application.__init__(self, handlers, **settings)
 
+
+class IndexHandler(cyclone.web.RequestHandler):
+    def get(self):
+        self.render("index.html")
 
 class MainHandler(cyclone.web.RequestHandler):
     def get(self):

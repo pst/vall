@@ -1,0 +1,242 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/*
+* This project uses pattern files from http://subtlepatterns.com/.
+* Subtle Patterns by Subtle Patterns 
+* is licensed under a 
+* Creative Commons Attribution-ShareAlike 3.0 Unported License.
+* http://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+*
+* Many thanks to Atle Mo and the pattern designers!
+*/
+
+
+/* 
+* Awesome Entypo pictograms by Daniel Bruce — www.entypo.com
+* The Entypo pictograms are licensed under CC BY 3.0 and the font under SIL Open Font License.
+*/
+
+
+/* Table of Content
+==================================================
+	#Typography
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+
+/* #Typography / baseline corrections
+================================================== */
+
+h1 { line-height: 49px; margin-bottom: 14px; }
+h2 { line-height: 42px; margin-bottom: 7px; }
+h3 { line-height: 35px; margin-bottom: 7px; }
+h4 { line-height: 28px; margin-bottom: 7px; }
+h5 { line-height: 21px;  }
+
+p { margin: 0 0 21px 0; }
+p.lead { line-height: 28px; }
+
+blockquote, blockquote p { line-height: 21px; }
+blockquote { margin: 0 0 21px; padding: 7px 20px 0 19px; }
+
+hr { margin: 7px 0 14px; }
+ 
+ul, ol { margin-bottom: 21px;}
+ul ul, ul ol,
+ol ol, ol ul { margin: 7px 0 7px 30px; }
+ul ul li, ul ol li,
+ol ol li, ol ul li { margin-bottom: 7px; }
+li { line-height: 21px; margin-bottom: 14px; }
+
+.icon {
+	font-family: "WebSymbolsRegular";
+}
+
+
+/* #font-face
+================================================== */
+
+@font-face {
+	font-family: 'WebSymbolsRegular';
+	src: 	url("../fonts/websymbols/websymbols-regular-webfont.eot");
+	src: 	url("../fonts/websymbols/websymbols-regular-webfont.eot?#iefix") format('embedded-opentype'),	
+			url("../fonts/websymbols/websymbols-regular-webfont.woff") format('woff'),
+			url("../fonts/websymbols/websymbols-regular-webfont.ttf") format('truetype'),
+			url("../fonts/websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular") format('svg');						
+}
+
+
+@font-face {
+	font-family: 'Entypo';
+	src: 	url("../fonts/entypo/entypo.eot");
+	src: 	url("../fonts/entypo/entypo.eot?#iefix") format('embedded-opentype'),	
+			url("../fonts/entypo/entypo.woff") format('woff'),
+			url("../fonts/entypo/entypo.ttf") format('truetype'),
+			url("../fonts/entypo/entypo.svg#WebSymbolsRegular") format('svg');						
+}
+
+
+
+/* #Site Styles
+================================================== */
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+/* ** =header ** */
+
+/* .sticky {
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+}
+*/
+
+header.main {
+	padding: 7px 0;
+}
+
+header h1.logo {
+	margin: 7px 0 0 0;
+}
+
+header #title {
+	margin: 24px 0;
+	font-weight: 700;
+	padding: 0.1em 0.6em;
+	background: #333;
+	color: #fff;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+		
+}
+
+header h1.logo a {
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	height: 166px;
+	display: block;
+	background: url(../img/vall.png) no-repeat 0 0;
+	
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+header nav {
+	float: right;
+	margin-top: 22px;
+}
+
+header nav ul li {
+	display: inline;
+	padding: 0 7px;
+	font-size: 18px;
+	font-weight: 900;
+}
+
+header nav ul li a {
+	color: #141414;
+	text-shadow: rgba(255,255,255,0.9) 1px 1px 3px;
+	text-decoration: none;
+	margin: 0px 7px 0 7px;
+	padding: 7px 21px 10px 21px;
+}
+
+header nav ul li.item a:hover,
+header nav ul li.item a:active,
+header nav ul li.item a.selected {
+	color: #141414;
+/*	border-bottom: 4px solid #990000; */
+	border-bottom: 4px solid #141414;
+/*	border-bottom: 4px solid #145f70; */
+}
+
+header nav ul li.omega {
+	padding-right: 0px;
+}
+
+header nav a.omega {
+	margin-right: 0px;
+}
+
+
+/* ** video styling ** */
+
+#localVideo {
+	margin: 21px 0;
+	padding: 4px;
+	border: 2px solid #eee;
+}
+
+.remotesVideos {
+	width: 80px;
+	margin: 1%;
+	padding: 4px;
+	border: 2px solid #eee;
+}
+
+img {
+	max-width: 100%;
+}
+
+.bull {
+	color: #ff003d;
+	font-weight: 900;
+}
+
+.vall {
+	font-style: italic;
+	font-weight: 700;
+}
+
+vidcaption {
+	position: absolute;
+	padding: 0.1em 0.6em;
+	top: 15%;
+	right: 3%;	
+	background: rgba(255,255,255,0.6);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	border-radius: 2px;
+}
+
+remotecaption {
+	position: absolute;
+	padding: 0.1em 0.6em;
+	top: 1%;
+	left: 1%;	
+	background: rgba(255,255,255,0.6);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	border-radius: 2px;
+}
+
+/* ** =footer ** */
+.footer {
+
+}

@@ -65,10 +65,7 @@ class IndexHandler(cyclone.web.RequestHandler):
 
 class JSHandler(cyclone.web.RequestHandler):
     def get(self):
-        endpoint = "10.100.255.82:{0}".format(5555)
-        if os.environ.get("DEP_NAME", False):
-            dep_name = os.environ.get("DEP_NAME")
-            endpoint = "{0}.cloudcontrolapp.com".format(dep_name.split('/')[0])
+        endpoint = "http://37.59.200.7:80"
         self.render("scripts.js", **{"wsendpoint": endpoint})
 
 

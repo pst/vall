@@ -59,6 +59,7 @@ $(document).ready(function() {
 
   var webrtc = new WebRTC({
     // Signaling server
+    url: '{{ wsendpoint }}',
     // the id/element dom element that will hold "our" video
     localVideoEl: 'localVideo',
     // the id/element dom element that will hold remote videos

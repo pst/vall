@@ -2,14 +2,12 @@
 <html>
 	<head>
 		<title>Videowall</title>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-		<script type="text/javascript" src="static/scripts.js"></script>
-		<link rel="stylesheet" type="text/css" media="screen" href="static/style.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="/static/scripts.js"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/style.css" />
 	</head>
 	<body>
 		<canvas id="videoCanvas"></canvas>
-		<div id="videoContainer">
-			<video autoplay controls id="ownVideo"></video>
-		</div>
+		<video autoplay preload="false" controls id="ownVideo" style="display:none;"></video>
 	</body>
 </html>

@@ -3,11 +3,13 @@
 	<head>
 		<title>Videowall</title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="/static/webrtc.io.js"></script>
 		<script type="text/javascript" src="/static/scripts.js"></script>
 		<link rel="stylesheet" type="text/css" media="screen" href="/static/style.css" />
 	</head>
 	<body>
-		<canvas id="videoCanvas"></canvas>
-		<video autoplay preload="false" controls id="ownVideo" style="display:none;"></video>
+		<canvas id="ownCanvas"></canvas>
+		<video autoplay="autoplay" muted="true" preload="false" controls="false" id="ownVideo" style="display:none;"></video>
+		<video id="remoteVideo" autoplay="autoplay"></video>
 	</body>
 </html>

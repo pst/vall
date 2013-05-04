@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var onFailSoHard = function(e) {
-    console.log('Reeeejected!', e);
+    alert("You have to allow access to your webcam!");
   };  // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
 
   function onSuccess(stream) {   
@@ -14,7 +14,7 @@ $(document).ready(function() {
       // Ready to go. Do some stuff.
     };  
 
-    var canvas = $('#videoCanvas').get(0);
+    var canvas = $('#ownCanvas').get(0);
     var context = canvas.getContext('2d');
     var cw = canvas.clientWidth;
     var ch = canvas.clientHeight;  
@@ -33,19 +33,26 @@ $(document).ready(function() {
     alert('Sorry, your browser does not support vall.me');
   }
 
-
-/*  video.bind('play', function(){
-    console.log("Hallo");
-      draw(this,context,cw,ch);
-  },false);
-*/
   function draw(v,c,w,h) {
       //if(v.paused || v.ended) return false;
-
       if(v.paused) {
         v.play();
       } 
       c.drawImage(v,0,0,w,h);
       setTimeout(draw,100,v,c,w,h);
   }
+
+  // note: make sure hostname available to all connecting clients
+  // (ie. probably not `localhost`)
+  rtc.connect('ws://{{ wsendpoint }}');
+
+  rtc.createStream({"video": true, "audio":false}, function(stream){
+    // get local stream for manipulation
+    rtc.attachStream(stream, 'ownVideo');
+  });
+
+  rtc.on('add remote stream', function(stream){
+    // show the remote video
+    rtc.attachStream(stream, 'remoteVideo');
+  });
 }); 

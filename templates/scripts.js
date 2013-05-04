@@ -2,7 +2,8 @@ $(document).ready(function() {
 
   var webrtc = new WebRTC({
     // Signaling server
-    url: "http://10.100.255.107:8888",
+    url: "http://37.59.200.7:80",
+    //url: "http://10.100.255.107:8888",
     // the id/element dom element that will hold "our" video
     localVideoEl: 'localVideo',
     // the id/element dom element that will hold remote videos

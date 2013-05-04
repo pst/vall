@@ -44,7 +44,7 @@ $(document).ready(function() {
 
   // note: make sure hostname available to all connecting clients
   // (ie. probably not `localhost`)
-  rtc.connect('ws://{{ wsendpoint }}');
+  rtc.connect('ws://{{ wsendpoint }}/echo');
 
   rtc.createStream({"video": true, "audio":false}, function(stream){
     // get local stream for manipulation

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os.path
 import sys
+import re
 
 import txmongo
 import cyclone.escape

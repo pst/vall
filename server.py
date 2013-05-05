@@ -49,6 +49,7 @@ class Application(cyclone.web.Application):
 
         handlers = [
             (r"/", IndexHandler),
+            (r"/show", VideowallHandler),
             (r"/socket.io/(.*)/(.*)/$", VallSocketHandler, dict(valls=valls)),
             (r"/socket.io/(.*)/$", VallHandler, dict(valls=valls)),
             (r"/js/scripts.js", JSHandler),
@@ -62,10 +63,13 @@ class IndexHandler(cyclone.web.RequestHandler):
     def get(self):
         self.render("index.html")
 
+class VideowallHandler(cyclone.web.RequestHandler):
+    def get(self):
+        self.render("videowall.html")
 
 class JSHandler(cyclone.web.RequestHandler):
     def get(self):
-        endpoint = "http://37.59.200.7:80"
+        endpoint = "http://signal.vall.me:80"
         self.render("scripts.js", **{"wsendpoint": endpoint})
 
 

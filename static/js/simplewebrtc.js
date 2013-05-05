@@ -485,6 +485,7 @@ Conversation.prototype.handleRemoteStreamAdded = function (event) {
     var stream = this.stream = event.stream,
         el = document.createElement('video'),
         container = this.parent.getRemoteVideoContainer();
+    el.setAttribute('class', 'vid');
     el.id = this.id;
     attachMediaStream(el, stream);
     if (container) container.appendChild(el);

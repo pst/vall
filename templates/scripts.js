@@ -8,7 +8,7 @@ $(document).ready(function() {
     // the id/element dom element that will hold remote videos
     remoteVideosEl: 'videos',
     // immediately ask for camera access
-    autoRequestMedia: false,
+    autoRequestMedia: true,
     // Disable audio
     media: {
       audio: false,
@@ -62,14 +62,10 @@ $(document).ready(function() {
     var perRow = getNumPerRow();
     var len = $('#videos').find('video').length;    
     var perColumn = Math.ceil(len / perRow);
-    //var width = Math.floor((window.innerWidth) / perRow);
-    var height = Math.floor((window.innerHeight - 190) / perColumn);
-    var width = ((height / 9 * 16)/90*100);
+    var width = Math.floor((window.innerWidth/100*95) / perRow);
+    var height = Math.floor((window.innerHeight - 90) / perColumn);
     video.width = width;
     video.height = height;
-/*    video.style.position = "absolute";
-    video.style.left = (i % perRow) * width + "px";
-    video.style.top = Math.floor(i / perRow) * height + "px";*/
   }  
 
   function subdivideVideos() {
@@ -85,8 +81,8 @@ $(document).ready(function() {
     }
   }  
 
-  window.onresize = function(event) {
+  $(window).resize(function() {
     subdivideVideos();
-  }; 
+  }); 
 
 });

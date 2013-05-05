@@ -261,15 +261,15 @@ remotecaption {
 	
 }
 
-.buttonc input[type="submit"]:hover,
-.buttonc input[type="submit"]:active {
+.buttonc input.vbutton:hover,
+.buttonc input.vbutton:active {
 	color: #dd1144;
 	-webkit-text-shadow: 0px 0px 16px rgba(221, 17, 68, 0.6);
 	-moz-text-shadow: 0px 0px 16px rgba(221, 17, 68, 0.6);
 	text-shadow: 0px 0px 16px rgba(221, 17, 68, 0.6);
 }
 
-.vbutton {
+.buttonc input.vbutton{
 	padding: 28px 4em;
 	color: #fff;
 	background: #141414;

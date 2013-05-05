@@ -110,6 +110,10 @@ body {
 }
 */
 
+
+h1 {
+	font-size: 1.8em;
+}
 header.main {
 	padding: 7px 0;
 }
@@ -236,7 +240,50 @@ remotecaption {
 	border-radius: 2px;
 }
 
-/* ** =footer ** */
-.footer {
 
+/* ** =button ** */
+
+.conbutton {
+	margin-top: 8em;
+	text-align: left;
+}
+
+.buttonc a {
+	color: #fff;
+	font-weight: 900;
+	font-size: 4em;
+	text-decoration: none;
+
+	-webkit-transition: color 0.18s ease-in-out;
+	-moz-transition: color 0.18s ease-in-out;
+	-o-transition: color 0.18s ease-in-out;
+	transition: color 0.18s ease-in-out;	
+	
+}
+
+.buttonc a:hover,
+.buttonc a:active {
+	color: #dd1144;
+	-webkit-text-shadow: 0px 0px 16px rgba(221, 17, 68, 0.6);
+	-moz-text-shadow: 0px 0px 16px rgba(221, 17, 68, 0.6);
+	text-shadow: 0px 0px 16px rgba(221, 17, 68, 0.6);
+}
+
+.vbutton {
+	padding: 28px 4em;
+	color: #fff;
+	background: #141414;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+}
+
+
+/* ** =footer ** */
+footer {
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
 }

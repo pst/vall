@@ -24,7 +24,7 @@ $(document).ready(function() {
   // we have to wait until it's ready
   webrtc.on('readyToCall', function () {
       // you can name it anything
-      webrtc.joinRoom('angelhack');
+      webrtc.joinRoom("{{ name }}");
       subdivideVideos();      
   });
 

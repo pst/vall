@@ -112,7 +112,7 @@ body {
 
 
 h1 {
-	font-size: 1.8em;
+	font-size: 1.3em;
 }
 header.main {
 	padding: 7px 0;
@@ -238,6 +238,17 @@ remotecaption {
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
 	border-radius: 2px;
+}
+
+.vid {
+	padding: 2px;
+	border: rgba(0,0,0,0.4);
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	border-radius: 2px;
+	
 }
 
 

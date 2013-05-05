@@ -313,6 +313,8 @@ WebRTC.prototype.getLocalVideoContainer = function () {
         return el;
     } else {
         var video = document.createElement('video');
+        video.setAttribute('class', 'vid');
+        //var canvas = document.createElement('canvas');
         el.appendChild(video);
         return video;
     }

@@ -23,14 +23,13 @@ class Application(cyclone.web.Application):
         
         mongo_uri = os.environ.get('MONGOLAB_URI', False)
         if mongo_uri:
-            log.msg(mongo_uri)
             regex = re.compile("^(?P<scheme>.*):\/\/(?P<user>.*):(?P<password>.*)@(?P<host>.*):(?P<port>\d*)\/(?P<database>.*)$")
             creds = regex.search(mongo_uri).groupdict()
-            log.msg(creds)
             mongo = txmongo.lazyMongoConnectionPool(host=creds['host'], port=int(creds['port']))
             db = mongo[creds['database']]
-            db.auth(creds['user'], creds['password'])
+            db.authenticate(creds['user'], creds['password'])
         else:
+            log.msg("Running locally, connectiong to local mongodb without authentication.")
             mongo = txmongo.lazyMongoConnectionPool()
             db = mongo['valldb']
 
